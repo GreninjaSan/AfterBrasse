@@ -596,6 +596,7 @@ Active item : Magic Mirror
 function _Stillbirth:use_magic_mirror()
     local player = Isaac.GetPlayer(0);
     player:UseCard(1);
+	return true
 end
 _Stillbirth:AddCallback( ModCallbacks.MC_USE_ITEM, _Stillbirth.use_magic_mirror, Items.magic_mirror_i );
 
@@ -607,6 +608,7 @@ function _Stillbirth:use_encyclopedia()
     local player = Isaac.GetPlayer(0);
     local rng = math.ceil(math.random(1,#libraryPool));
     player:UseActiveItem(libraryPool[rng],true,false,false,false)
+	return true
 end
 _Stillbirth:AddCallback( ModCallbacks.MC_USE_ITEM, _Stillbirth.use_encyclopedia, Items.encyclopedia_i );
 
